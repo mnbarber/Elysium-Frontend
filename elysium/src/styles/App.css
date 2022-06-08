@@ -1,0 +1,23 @@
+.logo {
+  width: 20vw;
+  height: 7vh;
+}
+
+a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Playfair Display', serif;
+  color: black;
+}
+
+a:hover {
+  color: #6333c4;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  line-height: 4;
+  font-size: 16px;
+  justify-content: space-between;
+}
