@@ -11,13 +11,13 @@ function AddBook(props) {
         setTitle(e.target.value)
     }
     const coverInput = (e) => {
-        setTitle(e.target.value)
+        setCover(e.target.value)
     }
     const authorInput = (e) => {
-        setTitle(e.target.value)
+        setAuthor(e.target.value)
     }
     const publishedInput = (e) => {
-        setTitle(e.target.value)
+        setPublished(e.target.value)
     }
 
     const submitBook = (e) => {
