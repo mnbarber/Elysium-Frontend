@@ -1,6 +1,7 @@
 .logo {
-  width: 20vw;
-  height: 7vh;
+  width: 180px;
+  height: 50px;
+  padding: 10px;
 }
 
 a {
@@ -14,10 +15,57 @@ a:hover {
   color: #6333c4;
 }
 
-.header {
+.header-links {
   display: flex;
   flex-direction: row;
   line-height: 4;
   font-size: 16px;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.book-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  float: left;
+  padding: 3%;
+}
+
+.book-card-img {
+  width: 130px;
+  height: 190px;
+}
+
+.book-detail-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.detail-img {
+  height: 400px;
+  width: 330px;
+  margin: 1%;
+}
+
+.detail-title {
+  margin: 1%;
+  font-size: 20px;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+.detail-author {
+  margin: 1%;
+  font-size: 20px;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+.detail-published {
+  margin: 1%;
+  font-size: 20px;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
 }

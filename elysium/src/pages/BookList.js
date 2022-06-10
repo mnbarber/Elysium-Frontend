@@ -1,28 +1,15 @@
-import { useState, useEffect } from "react";
+import '../styles/App.css';
+import { Link } from 'react-router-dom';
 
 function BookList(props) {
-    const [books, setBooks] = useState(null);
-
-    useEffect(() => {
-        const getBooksData = async () => {
-            const response = await fetch(props.URL + "books");
-            const data = await response.json();
-            setBooks(data);
-        };
-        getBooksData();
-    }, [props.URL]);
-
     const loaded = () => {
-        return books.map((book, bookId) => (
-            <div key={bookId}>
-                <h1>{book.title}</h1>
-                <img src={book.cover} alt='cover' />
-                <h3>{book.author}</h3>
-                <h3>{book.published}</h3>
+        return props.books.map((book, bookId) => (
+            <div className='book-grid' onClick={() => props.clickedBook(book)} key={bookId}>
+                <Link to={`/books/${book._id}`}><img className="book-card-img" src={book.cover} alt='cover' /></Link>
             </div>
         ));
     };
-    return books ? loaded() : <h1>loading... one moment</h1>;
+    return props.books ? loaded() : <h1>loading... one moment</h1>;
 };
 
 export default BookList;
