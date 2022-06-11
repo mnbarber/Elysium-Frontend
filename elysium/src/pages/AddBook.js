@@ -1,11 +1,14 @@
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function AddBook(props) {
     const [title, setTitle] = useState('');
     const [cover, setCover] = useState('');
     const [author, setAuthor] = useState('');
     const [published, setPublished] = useState('');
+
+    const navigate = useNavigate();
 
     const titleInput = (e) => {
         setTitle(e.target.value)
@@ -23,7 +26,7 @@ function AddBook(props) {
     const submitBook = (e) => {
         e.preventDefault()
         if(title) {
-            axios.post(`${URL}/newbook`, {
+            axios.post(`${props.URL}/newbook`, {
                 title: title,
                 cover: cover,
                 author: author,
@@ -32,6 +35,7 @@ function AddBook(props) {
             .then(book => {
                 props.setBook(book.data)
             })
+            .then(() => navigate('/books'))
             .catch(err => console.log(err))
         } else {
             return alert('Please enter a valid title!')

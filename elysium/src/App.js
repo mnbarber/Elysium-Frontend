@@ -6,6 +6,8 @@ import AuthorDetail from "./pages/AuthorDetail";
 import AuthorList from "./pages/AuthorList";
 import Home from "./pages/Home";
 import AddBook from "./pages/AddBook";
+import DeleteBook from "./pages/DeleteBook";
+import DeleteAuthor from "./pages/DeleteAuthor";
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
@@ -69,6 +71,8 @@ function App() {
         <Route path='/authors' element={<AuthorList URL={URL} authors={authors} clickedAuthor={clickedAuthor} />} />
         <Route path='/addauthor' element={<AddAuthor URL={URL} authors={authors} />} />
         <Route path='/authors/:id' element={<AuthorDetail URL={URL} oneAuthor={oneAuthor} />} />
+        <Route path='/deletebook' element={<DeleteBook URL={URL} oneBook={oneBook} setOneBook={setOneBook} />} />
+        <Route path='/deleteauthor' element={<DeleteAuthor URL={URL} oneAuthor={oneAuthor} setOneAuthor={setOneAuthor} />} />
       </Routes>
     </div>
   );

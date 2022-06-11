@@ -1,3 +1,7 @@
+body {
+  background-color: #d2c1f5;
+}
+
 .logo {
   width: 180px;
   height: 50px;
@@ -113,4 +117,49 @@ a:hover {
   margin: 1%;
   font-size: 20px;
   font-family: 'Playfair Display', serif;
+}
+
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin: 5%;
+}
+
+.message {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.home-title {
+  margin: 2%;
+}
+
+.add-book-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4%;
+}
+
+.submit-book {
+  padding: 10px 25px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  border: 0px;
+  width: max-content;
+  margin: 2%;
+  transition: all 0.3s 0s ease-in-out;
+}
+
+.submit-book:hover {
+  transform: scale(1.04, 1);
+  background-color: blueviolet;
+  text-decoration: none;
+  color: white;
 }

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function BookDetail(props) {
     return (
         <div className="book-detail-container">
@@ -10,6 +12,11 @@ function BookDetail(props) {
             </div>
             <div className="detail-published">
                 Published: {props.oneBook.published}
+            </div>
+            <div className="delete-link-button">
+                <Link to='/deletebook'>
+                    <button className="delete-button">Delete Book</button>
+                </Link>
             </div>
         </div>
     )
