@@ -1,6 +1,9 @@
 import Header from "./components/Header";
 import BookList from "./pages/BookList";
 import BookDetail from "./pages/BookDetail";
+import AddAuthor from "./pages/AddAuthor";
+import AuthorDetail from "./pages/AuthorDetail";
+import AuthorList from "./pages/AuthorList";
 import Home from "./pages/Home";
 import AddBook from "./pages/AddBook";
 import { Route, Routes } from 'react-router-dom';
@@ -12,38 +15,54 @@ function App() {
     const [oneBook, setOneBook] = useState('');
     const [authors, setAuthors] = useState(null);
     const [oneAuthor, setOneAuthor] = useState('');
+    const [randomBook, setRandomBook] = useState('');
 
     useEffect(() => {
-        const getBooksData = async () => {
-            const response = await fetch(URL + "books");
-            const data = await response.json();
-            setBooks(data);
-        };
+      if(!books) {
         getBooksData();
-    }, [URL + "books"]);
+      }
+      if(!authors) {
+        getAuthorsData();
+      } 
+    }, []);
+
+    useEffect(() => {
+      if(!randomBook) {
+        findRandomBook();
+      }   
+    }, [books]);
+
+    function findRandomBook() {
+      const randomIndex = Math.floor(Math.random() * books?.length);
+      const book = books ? books[randomIndex] : ''
+      setRandomBook(book);
+      console.log(book)
+    }
 
     function clickedBook(bookinfo) {
       setOneBook(bookinfo)
     }
-
-    useEffect(() => {
-        const getAuthorsData = async () => {
-            const response = await fetch(URL + "authors");
-            const data = await response.json();
-            setAuthors(data);
-        };
-        getAuthorsData();
-    }, [URL + "authors"]);
+    const getBooksData = async () => {
+      const response = await fetch(URL + "books");
+      const data = await response.json();
+      setBooks(data);
+  };
+    const getAuthorsData = async () => {
+      const response = await fetch(URL + "authors");
+      const data = await response.json();
+      setAuthors(data);
+    };
 
   function clickedAuthor(authorinfo) {
     setOneAuthor(authorinfo)
   }
+  
 
   return (
-    <div class="app">
+    <div className="app">
       <Header />
       <Routes>
-        <Route exact path='/' element={<Home />} />
+        <Route exact path='/' element={<Home URL={URL} books={books} randomBook={randomBook} />} />
         <Route path='/books' element={<BookList URL={URL} books={books} clickedBook={clickedBook} />} />
         <Route path='/addbook' element={<AddBook URL={URL} books={books} />} />
         <Route path='/books/:id' element={<BookDetail books={books} oneBook={oneBook} />} />

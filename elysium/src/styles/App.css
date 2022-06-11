@@ -69,3 +69,48 @@ a:hover {
   font-family: 'Playfair Display', serif;
   font-weight: bold;
 }
+
+.author-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  float: left;
+  padding: 3%;
+}
+
+.author-card-img {
+  width: 130px;
+  height: 190px;
+}
+
+.author-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  margin: 1%;
+  font-size: 12px;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+.author-detail-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+}
+
+.detail-name {
+  margin: 1%;
+  font-size: 20px;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+}
+
+.detail-bio {
+  margin: 1%;
+  font-size: 20px;
+  font-family: 'Playfair Display', serif;
+}

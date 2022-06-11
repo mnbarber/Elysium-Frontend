@@ -6,7 +6,7 @@ function AuthorDetail(props) {
             </div>
             <img className="detail-img" src={props.oneAuthor.img} alt="author img" />
             <div className="detail-bio">
-                Bio: {props.oneAuthor.bio}
+                {props.oneAuthor.bio}
             </div>
         </div>
     )

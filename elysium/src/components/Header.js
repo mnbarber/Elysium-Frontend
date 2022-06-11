@@ -12,6 +12,8 @@ function Header() {
                 <Link to='/addbook'>Add a Book</Link>
                 ||
                 <Link to='/authors'>Authors</Link>
+                || 
+                <Link to='/addauthor'>Add an Author</Link>
             </div>
             <hr />
         </header>

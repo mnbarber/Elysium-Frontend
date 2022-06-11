@@ -5,8 +5,10 @@ function AuthorList(props) {
     const loaded = () => {
         return props.authors.map((author, authorId) => (
             <div className='author-grid' onClick={() => props.clickedAuthor(author)} key={authorId}>
-                <Link to={`/authors/${author._id}`}><img className="author-card-img" src={author.img} alt='cover' /></Link>
-                <p className='author-name'>{author.name}</p>
+                <div className='author-card'>
+                    <Link to={`/authors/${author._id}`}><img className="author-card-img" src={author.img} alt='cover' /></Link>
+                    <p className='author-name'>{author.name}</p>
+                </div>
             </div>
         ));
     };
