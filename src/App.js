@@ -12,7 +12,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function App() {
-    const URL = "https://elysiumbackendapi.herokuapp.com/";
+    const URL = "https://elysiumbackendapi.herokuapp.com";
     const [books, setBooks] = useState(null);
     const [oneBook, setOneBook] = useState('');
     const [authors, setAuthors] = useState(null);
@@ -45,12 +45,12 @@ function App() {
       setOneBook(bookinfo)
     }
     const getBooksData = async () => {
-      const response = await fetch(URL + "books");
+      const response = await fetch(URL + "/books");
       const data = await response.json();
       setBooks(data);
-  };
+    };
     const getAuthorsData = async () => {
-      const response = await fetch(URL + "authors");
+      const response = await fetch(URL + "/authors");
       const data = await response.json();
       setAuthors(data);
     };
@@ -58,7 +58,6 @@ function App() {
   function clickedAuthor(authorinfo) {
     setOneAuthor(authorinfo)
   }
-  
 
   return (
     <div className="app">
@@ -66,13 +65,13 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home URL={URL} books={books} randomBook={randomBook} />} />
         <Route path='/books' element={<BookList URL={URL} books={books} clickedBook={clickedBook} />} />
-        <Route path='/addbook' element={<AddBook URL={URL} books={books} />} />
+        <Route path='/addbook' element={<AddBook URL={URL} books={books} setBooks={setBooks} />} />
         <Route path='/books/:id' element={<BookDetail books={books} oneBook={oneBook} />} />
         <Route path='/authors' element={<AuthorList URL={URL} authors={authors} clickedAuthor={clickedAuthor} />} />
         <Route path='/addauthor' element={<AddAuthor URL={URL} authors={authors} />} />
         <Route path='/authors/:id' element={<AuthorDetail URL={URL} oneAuthor={oneAuthor} />} />
-        <Route path='/deletebook' element={<DeleteBook URL={URL} oneBook={oneBook} setOneBook={setOneBook} />} />
-        <Route path='/deleteauthor' element={<DeleteAuthor URL={URL} oneAuthor={oneAuthor} setOneAuthor={setOneAuthor} />} />
+        <Route path='/deletebook' element={<DeleteBook URL={URL} books={books} setBooks={setBooks} oneBook={oneBook} />} />
+        <Route path='/deleteauthor' element={<DeleteAuthor URL={URL} oneAuthor={oneAuthor} authors={authors} setAuthors={setAuthors} />} />
       </Routes>
     </div>
   );

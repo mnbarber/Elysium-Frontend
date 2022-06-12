@@ -19,10 +19,10 @@ function AddAuthor(props) {
     const submitAuthor = (e) => {
         e.preventDefault()
         if(name) {
-            axios.post(`${URL}/newauthor`, {
-                name: name,
-                img: img,
-                bio: bio,
+            axios.post(`${props.URL}/newauthor`, {
+                name,
+                img,
+                bio,
             })
             .then(author => {
                 props.setAuthor(author.data)

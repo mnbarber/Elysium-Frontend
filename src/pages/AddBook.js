@@ -26,16 +26,16 @@ function AddBook(props) {
     const submitBook = (e) => {
         e.preventDefault()
         if(title) {
-            axios.post(`${props.URL}/newbook`, {
+            axios.post(`${props.URL}/books`, {
                 title: title,
                 cover: cover,
                 author: author,
                 published: published
             })
             .then(book => {
-                props.setBook(book.data)
+                props.setBooks(book.data)
+                navigate('/books')
             })
-            .then(() => navigate('/books'))
             .catch(err => console.log(err))
         } else {
             return alert('Please enter a valid title!')

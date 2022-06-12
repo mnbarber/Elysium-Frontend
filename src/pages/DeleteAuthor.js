@@ -1,17 +1,18 @@
 import axios from 'axios';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const DeleteAuthor = (props) => {
+    const navigate = useNavigate();
+
     const deleteAuthor = (e) => {
         e.preventDefault()
-        axios.patch(`${props.URL}/authors/${props.oneAuthor._id}`, {
-            name: '',
-            img: '',
-            bio: ''
-        })
-        .then(author => {
-            props.setOneAuthor(author.data)
+        console.log('please god')
+        axios.delete(`${props.URL}/authors/${props.oneAuthor._id}`)
+        .then(deletedAuthor => {
+            const authors = props.authors.filter(author => author._id !== deletedAuthor.data._id)
+            props.setAuthors(authors)
+            navigate('/authors')
         })
         .catch(err => console.log(err))
     }

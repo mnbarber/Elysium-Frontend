@@ -7,16 +7,12 @@ const DeleteBook = (props) => {
 
     const deleteBook = (e) => {
         e.preventDefault()
-        axios.patch(`${props.URL}/books/${props.oneBook._id}`, {
-            title: '',
-            cover: '',
-            author: '',
-            published: ''
+        axios.delete(`${props.URL}/books/${props.oneBook._id}`)
+        .then(deletedBook => {
+            const books = props.books.filter(book => book._id !== deletedBook.data._id)
+            props.setBooks(books)
+            navigate('/books')
         })
-        .then(book => {
-            props.setOneBook(book.data)
-        })
-        .then(() => navigate('/books'))
         .catch(err => console.log(err))
     }
 
