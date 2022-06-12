@@ -39,7 +39,6 @@ function App() {
       const randomIndex = Math.floor(Math.random() * books?.length);
       const book = books ? books[randomIndex] : ''
       setRandomBook(book);
-      console.log(book)
     }
 
     function clickedBook(bookinfo) {

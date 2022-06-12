@@ -8,7 +8,6 @@ const DeleteAuthor = (props) => {
 
     const deleteAuthor = (e) => {
         e.preventDefault()
-        console.log('please god')
         axios.delete(`${props.URL}/authors/${props.oneAuthor._id}`)
         .then(deletedAuthor => {
             const authors = props.authors.filter(author => author._id !== deletedAuthor.data._id)

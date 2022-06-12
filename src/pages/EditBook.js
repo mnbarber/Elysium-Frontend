@@ -47,16 +47,16 @@ function EditBook(props) {
         <div className='add-book'>
             <form className='add-book-form'>
                 <h3>Title:</h3>
-                <input type="text" value={props.oneBook.title} onChange={titleInput} />
+                <input type="text" name={props.oneBook.title} value={props.oneBook.title} onChange={titleInput} />
                 <br />
                 <h3>Cover Image:</h3>
-                <input type="text" value={props.oneBook.cover} onChange={coverInput} />
+                <input type="text" name={props.oneBook.cover} value={props.oneBook.cover} onChange={coverInput} />
                 <br />
                 <h3>Author:</h3>
-                <input type="text" value={props.oneBook.author} onChange={authorInput} />
+                <input type="text" name={props.oneBook.author} value={props.oneBook.author} onChange={authorInput} />
                 <br />
                 <h3>Publish Date:</h3>
-                <input type="text" value={props.oneBook.published} onChange={publishedInput} />
+                <input type="text" name={props.oneBook.published} value={props.oneBook.published} onChange={publishedInput} />
                 <br />
                 <button className='edit-book' onClick={submitBook}>Submit</button>
                 <Link to='/books'><button className='cancel-button'>Cancel</button></Link>
