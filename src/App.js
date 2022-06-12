@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import AddBook from "./pages/AddBook";
 import DeleteBook from "./pages/DeleteBook";
 import DeleteAuthor from "./pages/DeleteAuthor";
+import EditBook from "./pages/EditBook";
 import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
@@ -72,6 +73,7 @@ function App() {
         <Route path='/authors/:id' element={<AuthorDetail URL={URL} oneAuthor={oneAuthor} />} />
         <Route path='/deletebook' element={<DeleteBook URL={URL} books={books} setBooks={setBooks} oneBook={oneBook} />} />
         <Route path='/deleteauthor' element={<DeleteAuthor URL={URL} oneAuthor={oneAuthor} authors={authors} setAuthors={setAuthors} />} />
+        <Route path='/books/:id/edit' element={<EditBook URL={URL} books={books} setBooks={setBooks} oneBook={oneBook} />} />
       </Routes>
     </div>
   );

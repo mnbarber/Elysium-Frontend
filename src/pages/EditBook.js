@@ -1,9 +1,9 @@
 import axios from 'axios';
 import '../styles/App.css';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
-function AddBook(props) {
+function EditBook(props) {
     const [title, setTitle] = useState('');
     const [cover, setCover] = useState('');
     const [author, setAuthor] = useState('');
@@ -27,11 +27,11 @@ function AddBook(props) {
     const submitBook = (e) => {
         e.preventDefault()
         if(title) {
-            axios.post(`${props.URL}/books`, {
-                title: title,
-                cover: cover,
-                author: author,
-                published: published
+            axios.patch(`${props.URL}/books/${props.oneBook._id}/edit`, {
+                title,
+                cover,
+                author,
+                published
             })
             .then(book => {
                 props.setBooks(book.data)
@@ -47,21 +47,22 @@ function AddBook(props) {
         <div className='add-book'>
             <form className='add-book-form'>
                 <h3>Title:</h3>
-                <input type="text" onChange={titleInput} />
+                <input type="text" value={props.oneBook.title} onChange={titleInput} />
                 <br />
                 <h3>Cover Image:</h3>
-                <input type="text" onChange={coverInput} />
+                <input type="text" value={props.oneBook.cover} onChange={coverInput} />
                 <br />
                 <h3>Author:</h3>
-                <input type="text" onChange={authorInput} />
+                <input type="text" value={props.oneBook.author} onChange={authorInput} />
                 <br />
                 <h3>Publish Date:</h3>
-                <input type="text" onChange={publishedInput} />
+                <input type="text" value={props.oneBook.published} onChange={publishedInput} />
                 <br />
-                <button className='submit-book' onClick={submitBook}>Submit</button>
+                <button className='edit-book' onClick={submitBook}>Submit</button>
+                <Link to='/books'><button className='cancel-button'>Cancel</button></Link>
             </form>
         </div>
     )
 } 
 
-export default AddBook;
+export default EditBook;

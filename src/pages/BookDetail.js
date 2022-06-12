@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import '../styles/App.css';
 
 function BookDetail(props) {
     return (
@@ -16,6 +17,11 @@ function BookDetail(props) {
             <div className="delete-link-button">
                 <Link to='/deletebook'>
                     <button className="delete-button">Delete Book</button>
+                </Link>
+            </div>
+            <div className="edit-link-button">
+                <Link to="/books/:id/edit">
+                    <button className='edit-button'>Edit Book</button>
                 </Link>
             </div>
         </div>

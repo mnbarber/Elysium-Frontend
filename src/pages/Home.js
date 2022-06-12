@@ -1,3 +1,5 @@
+import '../styles/App.css';
+
 const Home = (props) => {
     return (
         <div className="homepage-container">

@@ -8,6 +8,24 @@ body {
   padding: 10px;
 }
 
+input {
+  padding: 10px 25px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  border: 0px;
+  width: max-content;
+  margin: 2%;
+  transition: all 0.3s 0s ease-in-out;
+}
+
+input:hover {
+  transform: scale(1.04, 1);
+  background-color: blueviolet;
+  text-decoration: none;
+  color: white;
+}
+
 a {
   text-decoration: none;
   font-size: 16px;
@@ -146,6 +164,14 @@ a:hover {
   padding: 4%;
 }
 
+.add-author-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4%;
+}
+
 .submit-book {
   padding: 10px 25px;
   text-align: center;
@@ -158,6 +184,78 @@ a:hover {
 }
 
 .submit-book:hover {
+  transform: scale(1.04, 1);
+  background-color: blueviolet;
+  text-decoration: none;
+  color: white;
+}
+
+.edit-book {
+  padding: 10px 25px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  border: 0px;
+  width: max-content;
+  margin: 2%;
+  transition: all 0.3s 0s ease-in-out;
+}
+
+.edit-book:hover {
+  transform: scale(1.04, 1);
+  background-color: blueviolet;
+  text-decoration: none;
+  color: white;
+}
+
+.cancel-button {
+  padding: 10px 25px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  border: 0px;
+  width: max-content;
+  margin: 2%;
+  transition: all 0.3s 0s ease-in-out;
+}
+
+.cancel-button:hover {
+  transform: scale(1.04, 1);
+  background-color: blueviolet;
+  text-decoration: none;
+  color: white;
+}
+
+.delete-button {
+  padding: 10px 25px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  border: 0px;
+  width: max-content;
+  margin: 2%;
+  transition: all 0.3s 0s ease-in-out;
+}
+
+.delete-button:hover {
+  transform: scale(1.04, 1);
+  background-color: blueviolet;
+  text-decoration: none;
+  color: white;
+}
+
+.edit-button {
+  padding: 10px 25px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  border: 0px;
+  width: max-content;
+  margin: 2%;
+  transition: all 0.3s 0s ease-in-out;
+}
+
+.edit-button:hover {
   transform: scale(1.04, 1);
   background-color: blueviolet;
   text-decoration: none;
