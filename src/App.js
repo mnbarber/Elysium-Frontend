@@ -19,6 +19,7 @@ function App() {
     const [authors, setAuthors] = useState(null);
     const [oneAuthor, setOneAuthor] = useState('');
     const [randomBook, setRandomBook] = useState('');
+    const [token, setToken] = useState();
 
     useEffect(() => {
       if(!books) {

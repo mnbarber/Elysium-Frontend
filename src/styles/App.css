@@ -261,3 +261,13 @@ a:hover {
   text-decoration: none;
   color: white;
 }
+
+.next-book-img {
+  height: 500px;
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
